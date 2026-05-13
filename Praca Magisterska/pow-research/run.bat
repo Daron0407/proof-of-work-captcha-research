@@ -1,0 +1,1 @@
+cargo run --release -- experiments/sha256.yaml

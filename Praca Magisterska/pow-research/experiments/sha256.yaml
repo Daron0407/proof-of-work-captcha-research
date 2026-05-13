@@ -1,0 +1,12 @@
+algorithms:
+  - sha256
+  - sha256chain
+
+difficulties:
+  - 2
+  - 3
+  - 4
+  - 5
+
+
+runs: 5
