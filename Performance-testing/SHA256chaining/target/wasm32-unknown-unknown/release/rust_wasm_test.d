@@ -1,0 +1,1 @@
+D:\Workspace\GitHub\proof-of-work-captcha-research\WASM-performace\rust-wasm-test\target\wasm32-unknown-unknown\release\rust_wasm_test.wasm: D:\Workspace\GitHub\proof-of-work-captcha-research\WASM-performace\rust-wasm-test\src\lib.rs

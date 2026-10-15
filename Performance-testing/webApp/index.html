@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Captcha Test</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="page-header">
+    <div>
+      <span class="eyebrow">Performance lab</span>
+      <h1>Captcha Test</h1>
+      <p>Porównanie czasu wykonania funkcji JavaScript i WebAssembly.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="config-panel">
+      <h2>Konfiguracja testu</h2>
+
+      <form id="benchmark-form">
+        <div class="form-grid">
+          <label class="form-field">
+            Funkcja
+            <select id="function-select" required></select>
+          </label>
+
+          <label class="form-field">
+            Nonce
+            <div class="nonce-input">
+              <input id="nonce-input" type="text" required />
+              <button id="random-nonce-button" type="button" class="secondary-button" title="Wygeneruj nonce">
+                Losuj
+              </button>
+            </div>
+          </label>
+
+          <label class="form-field">
+            Difficulty
+            <input id="difficulty-input" type="number" min="1" value="100" required />
+          </label>
+
+          <label class="form-field">
+            Prefix length
+            <input id="prefix-len-input" type="number" min="1" value="3" required />
+          </label>
+
+          <label class="form-field">
+            Depth
+            <input id="depth-input" type="number" min="0" value="5" required />
+          </label>
+        </div>
+
+
+        <div class="form-actions">
+          <button class="run-button add-test-button" type="submit">
+            Uruchom test
+          </button>
+
+          <button class="run-button run-all-button" id="run-all-button" type="button">
+            Uruchom wszystkie testy
+          </button>
+        </div>
+
+      </form>
+    </section>
+
+
+    <section class="results-section">
+      <div class="column-heading">
+        <div class="column-icon wasm-icon">⚡</div>
+        <div>
+          <h2>Wyniki testów</h2>
+          <p>Każdy kafelek reprezentuje jedną implementację.</p>
+        </div>
+      </div>
+
+      <div id="benchmarks" class="benchmark-list"></div>
+    </section>
+    </div>
+  </main>
+
+  <template id="benchmark-template">
+    <article class="benchmark-card">
+      <div class="card-top">
+        <div>
+          <span class="benchmark-label"></span>
+          <h3 class="benchmark-name"></h3>
+        </div>
+        <span class="status-badge">Gotowe</span>
+      </div>
+
+      <p class="benchmark-description"></p>
+
+      <div class="test-parameters"></div>
+
+      <div class="benchmark-footer">
+        <div class="timer">
+          <span class="timer-label">Czas wykonania</span>
+          <strong class="timer-value">—</strong>
+        </div>
+
+        <div class="run-area">
+          <div class="spinner" aria-hidden="true"></div>
+          <button type="button" class="run-button">Uruchom ponownie</button>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script type="module" src="script.js"></script>
+</body>
+
+</html>
