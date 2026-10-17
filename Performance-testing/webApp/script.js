@@ -1,5 +1,5 @@
 
-import { benchmarks } from "./benchmark.js";
+import { benchmarks } from "./benchmarks.js";
 
 const template = document.querySelector("#benchmark-template");
 const form = document.querySelector("#benchmark-form");
@@ -74,7 +74,15 @@ function createBenchmarkCard(benchmark, config, testNumber) {
     const start = performance.now();
 
     try {
-      const result = await benchmark.run({ ...config });
+      const result = await new Promise((resolve, reject) => {
+        setTimeout(() => {
+          try {
+            resolve(benchmark.run({ ...config }));
+          } catch (err) {
+            reject(err);
+          }
+        }, 50);
+      })
       const elapsed = performance.now() - start;
 
       timer.textContent = formatTime(elapsed);

@@ -6,7 +6,6 @@ async function sha256(data) {
     return new Uint8Array(hash);
 }
 
-
 function bytesToInteger(bytes) {
     let value = 0n;
 
@@ -16,6 +15,7 @@ function bytesToInteger(bytes) {
 
     return value;
 }
+
 
 
 /**
@@ -32,7 +32,7 @@ function bytesToInteger(bytes) {
  *
  * i challenge jest powtarzany `depth` razy.
  */
-export async function solveChallenge(
+export async function cryptoSolveChallenge(
     nonce,
     difficulty,
     prefix_len,
