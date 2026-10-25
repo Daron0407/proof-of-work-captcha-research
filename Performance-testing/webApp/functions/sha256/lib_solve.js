@@ -32,7 +32,7 @@ function bytesToInteger(bytes) {
  *
  * i challenge jest powtarzany `depth` razy.
  */
-export async function cryptoSolveChallenge(
+export async function sha256LibSolve(
     nonce,
     difficulty,
     prefix_len,

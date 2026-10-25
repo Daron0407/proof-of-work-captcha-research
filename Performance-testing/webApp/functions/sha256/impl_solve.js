@@ -1,6 +1,6 @@
-import { sha256 } from "./utils/sha256.js"
+import { sha256 } from "./sha256.js"
 
-export async function implementationSolveChallenge(
+export async function sha256ImplSolve(
     nonce,
     difficulty,
     prefix_len,
